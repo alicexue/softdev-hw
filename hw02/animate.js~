@@ -1,0 +1,31 @@
+console.log("loaded canvas.js");
+
+var c = document.getElementById("playground");
+var ctx = c.getContext("2d");
+var circleBtn = document.getElementById("circle");
+var grow = false;
+
+ctx.beginPath();
+ctx.lineTo(250,250);
+
+var createCircle = function(e) {
+    grow = !grow;
+    ctx.lineTo(mouseX,mouseY);
+    ctx.strokeStyle = "#4B0082";
+    ctx.stroke();
+    
+    ctx.beginPath();
+    ctx.arc(mouseX,mouseY,10,0,2*Math.PI);
+    ctx.moveTo(mouseX,mouseY);
+    ctx.fillStyle = "#4B0082";
+    ctx.fill();
+    console.log("created dot");
+}
+
+
+var circle = function(e) {
+
+}
+
+c.addEventListener("circle",createCircle);
+circleBtn.addEventListener("circle",clear);
