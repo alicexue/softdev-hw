@@ -50,13 +50,19 @@ var createCircle = function(e) {
 
 var xcor = 50;
 var ycor = 50;
-var logo = newImage();
+var logo = new Image();
 logo.src = "./logo_dvd.jpg";
+var logoWidth = 80;
+var logoHeight = 40;
 var posSlope = false;
 var moveUp = false;
 
+// move the dvd logo across the canvas and bounce off the edges
 var moveDVD = function(e) {
-    ctx.drawImage(logo,xcor,ycor,40,20);
+    // draw the image at (xcor,ycor) with width logoWidth and height logoHeight
+    ctx.drawImage(logo,xcor,ycor,logoWidth,logoHeight);
+    // change the coordinates of the logo depending on the direction determined
+    // by posSlope and moveUp
     if (posSlope & moveUp) {
 	xcor = xcor + 1;
 	ycor = ycor + 1;
@@ -67,18 +73,33 @@ var moveDVD = function(e) {
 	xcor = xcor - 1;
 	ycor = ycor + 1;
     } else {
-	xcor = xcor - 1;
-	ycor = ycor + 1;
+	xcor = xcor + 1;
+	ycor = ycor - 1;
     }
+    
+    // check if the logo hits the borders and change the direction of movement
+    if (xcor == 1 || xcor == c.width - logoWidth - 1) {
+	posSlope = !posSlope;
+    } 
+    if (ycor == 1 || ycor == c.height - logoHeight - 1) {
+	posSlope = !posSlope;
+	moveUp = !moveUp;
+	//console.log('hit the border');
+	//console.log(xcor);
+	//console.log(ycor);
+    } 
+    
+    // continue to call moveDVD for each frame
+    requestID = window.requestAnimationFrame(moveDVD);
 }
 
 var stop = function(e) {
-    // stopped animation frame
+    // stop animation frame defined by requestID
     if (requestID != null) {
 	window.cancelAnimationFrame(requestID);
     }
 }
 
 circleBtn.addEventListener("click",createCircle);
-moveDVD.addEventListener("click",moveDVD);
+dvdBtn.addEventListener("click",moveDVD);
 stopBtn.addEventListener("click",stop);
