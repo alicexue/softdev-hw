@@ -9,7 +9,7 @@ var change = function(e) {
 
 //var radius = 0;
 
-function drawDot = function(x, y) {
+var drawDot = function(x, y) {
     var c = document.createElementNS("http://www.w3.org/2000/svg", "circle");
     c.setAttribute("cx", x);
     c.setAttribute("cy", y);
@@ -18,6 +18,7 @@ function drawDot = function(x, y) {
     c.setAttribute("stroke", "black");
     c.addEventListener("click", change);  
     pic.appendChild(c);
+    console.log("grew dot");
 };
 
 
