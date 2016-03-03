@@ -59,8 +59,7 @@ var dvdSetup = function(){
     var yvel = 1;
     var moveDVD = function() {
 	var c = document.createElementNS("http://www.w3.org/2000/svg", "image");
-	c.setAttribute("xlink", "./logo_dvd.jpg");
-	c.setAttribute("src", "./logo_dvd.jpg");
+	c.setAttributeNS("http://www.w3.org/1999/xlink", "href", "logo_dvd.jpg");
 	c.setAttribute("x", xcor);
 	c.setAttribute("y", ycor);
 	c.setAttribute("width", logoWidth.toString()+"px");
@@ -73,8 +72,6 @@ var dvdSetup = function(){
 	}
 	xcor = xcor + xvel;
 	ycor = ycor + yvel;
-	//pic.appendChild(c);
-	console.log("hello");
     }
     intervalID = window.setInterval(moveDVD,16);
     
