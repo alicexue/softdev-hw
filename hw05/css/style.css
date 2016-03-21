@@ -1,0 +1,8 @@
+.chart div{
+  font: 15px sans-serif;
+  color: black;
+  text-align: right;
+  padding: 4px;
+  margin: 1px;
+  white-space: nowrap;
+}
