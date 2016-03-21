@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Democratic Delegates</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <h1>Democratic Delegates</h1>
+    <h4>Total Number of Delegates: 4,763</h4>
+    <h4>Number of Allocated Delegates: 2,258</h4>
+    <h4>Number of Unallocated Delegates: 2,505</h4>
+    <table frame = "box">
+      <tr><td><b>Key:</b><td></tr>
+      <tr> 
+	<td>Allocated Delegates</td>
+	<td width = "15px" bgcolor = "#0033cc"></td>
+      <tr>
+	<td>Unallocated Delegates</td>
+	<td width ="15px" bgcolor = "#bfbfbf"></td>
+      </tr>
+    </table>
+
+    <br>
+    <div class="chart"></div>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+
+</html>
