@@ -19,8 +19,8 @@ d3.select(".chart")
 	return d + ": " +  delegatesPerState[d]; })
     .style("background-color", function(d) {
           if (unallocated.indexOf(d) > -1) {
-            return "#0033cc";
-          } else {
             return "#bfbfbf";
+          } else {
+            return "#0033cc";
           } });
 
