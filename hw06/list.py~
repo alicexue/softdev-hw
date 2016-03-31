@@ -1,0 +1,11 @@
+nums = []
+for x in range(8):
+    nums.append(x)
+
+print nums
+
+squares = []
+for x in range(8):
+    squares.append(x*2)
+
+print squares

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    .chart div {
+    background-color: steelblue;
+    text-align: right;
+    padding: 3px;
+    margin: 1px;
+    }
+  </style>
+  <head>
+    <title>Bacon Ipsum</title>
+  </head>
+  
+  
+  <body>
+    
+    <div class = "chart">
+      <div style="width:40px;">4</div>
+      <div style="width:80px;">8</div>
+</div>
+
+ 
+  </body>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script>
+  </script>
+</html>
