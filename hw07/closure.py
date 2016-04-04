@@ -1,31 +1,14 @@
-# Q1: How would you explain to your ducky what this Scheme code does?
-# (lambda (a b) (+ a b))
-# lambda creates a function that does not have a name and this function in particular takes the parameters a and b and adds them
+# CLOSURES
+# 1. A function is declared inside another function
+# 2. Inner function accesses a variable from the outer function (outside of the local scope of the inner function)
+# 3. The external function binds a value to the variable and finishes (or closes) before the inner function can be completed
 
-# Q2: How would you explain to your ducky what this Scheme code does?
-# (define foo (lambda (a b) (+ a b)))
-# the function created by lambda (explained in Q1) is named foo
+def repeat(s):
+    def times(x):
+        return s * x
+    return times
+# This is an example of a nested function but NOT a closure because 
 
-
-# ---------------------------- CLOSURES IN PYTHON ---------------------------- #
-def inc(x):
-    return x + 1
-
-f = inc
-
-print f(10)
-
-def h(x):
-    return lambda y: x + y
-
-#print h(1)
-#print h(2)
-#print h(1)(3)
-#print h(2)(5)
-
-
-#Q3: Which of the four h() calls above would you say also created closures?
-# h(1) and h(2) create closures because they return a function defined in h
 
 #b=h(1)
 #print b
@@ -35,6 +18,10 @@ def f(x):
     def g(y):
         return x + y
     return g
+
+# ^ is not a closure, but f(1) is
+
+
 
 #print f(1)
 #print f(1)(3)
@@ -49,8 +36,15 @@ def repeat(s):
     return lambda n: s*n
 
 
+#def repeat(word):
+#    def times(x):
+#        return word*x
+#    return times
+
 r1 = repeat("hello")
 r2 = repeat("goodbye")
+
+# These create closures because repeat runs, binds s to "hello", and then exits, returning a function (times) with s bound to "hello"
 
 print r1(2)
 print r2(2)
