@@ -1,0 +1,7 @@
+import random
+
+def get_name():
+    names = ['tom', 'sue', 'harry', 'lisa', 'sarah', 'horatio']
+    return random.choice(names)
+
+print get_name()
