@@ -48,14 +48,14 @@ def check_pass(p):
 
 print check_pass("Yes432")
 
-ALPHANUM = ".?!&#,;:-_8"
+NONALPHANUM = ".?!&#,;:-_*"
 
 def pass_strength(p):
     uc = [True for x in p if x in UC_LETTERS]
     lc = [True for x in p if x in LC_LETTERS]
     num = [True for x in p if x in NUMBERS]
-    anum = [True for x in p if x in ALPHANUM]
-    if (check_pass == False & (sum(anum) <= 0)):
+    nonanum = [True for x in p if x in NONALPHANUM]
+    if (check_pass == False & (sum(nonanum) <= 0)):
         return 1
     
     strength = 0    
@@ -71,10 +71,10 @@ def pass_strength(p):
         strength += 2
     else:
         strength += sum(num)
-    if sum(anum) >= 2:
+    if sum(nonanum) >= 2:
         strength += 2
     else:
-        strength += sum(anum)
+        strength += sum(nonanum)
 
     return strength
 
@@ -82,3 +82,15 @@ print pass_strength("eeG")
 print pass_strength("WDEfff33..")
 print pass_strength("33njnj44?")
 print pass_strength("g3hdw4hd")
+
+def strength_check(p):
+    l = [1 if x in UC_LETTERS else
+        2 if x in LC_LETTERS else
+        3 if x in NUMBERS else
+        0 for x in p]
+    return 1 in l and 2 in l and 3 in l
+
+print strength_check("eeG")
+print strength_check("WDEfff33..")
+print strength_check("33njnj44?")
+print strength_check("g3hdw4hd")
