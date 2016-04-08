@@ -1,0 +1,14 @@
+
+def union(a,b):
+    return a + [x for x in b if x not in a]
+
+print union([2, 4, 15, 4],[3
+
+def intersection(a,b):
+    return [x for x in a if x in b]
+
+# def setDiff(u,a)
+
+# def symmetricDiff(a,b)
+
+# def cartProduct(a,b)

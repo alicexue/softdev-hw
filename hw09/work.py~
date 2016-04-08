@@ -1,0 +1,14 @@
+
+
+def get_name_arg(fn):
+    def inner(arg):
+        start = time.time()
+        fn(arg)
+        end = time.time()
+        return end - start
+    return inner
+
+def timing(fn):
+    def inner(arg):
+        return fn + ": " + arg
+    return inner 
