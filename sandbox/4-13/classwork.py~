@@ -1,0 +1,13 @@
+
+
+# Rewrite fib(n) to employ dynamic programming
+
+def fib(n):
+    def inner(m):
+        if m < 2:
+            return m
+        return inner(m-1) + inner(m-2)
+    return inner
+
+a = fib()
+print a(5)
