@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<!-- demo of closures in JS, leading to class
+  -->
+
+<html>
+  <head></head>
+  <body>
+
+    <script src = "f1.js"></script>
+  </body>
+</html>
